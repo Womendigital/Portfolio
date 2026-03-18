@@ -1,0 +1,997 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Alerte Sénégal - Plateforme de Signalement Éthique Sécurisée</title>
+  <meta name="description" content="Plateforme officielle de signalement anonyme et sécurisé pour lutter contre la corruption et les manquements éthiques au Sénégal." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --accent:#441c8a;
+      --accent-light:#a78bfa;
+      --muted:#9aa4b2;
+      --glass: rgba(255,255,255,0.04);
+      --transition: all 0.3s ease;
+      --testimonial-bg: linear-gradient(135deg, rgba(124,58,237,0.08), rgba(6,182,212,0.05));
+      --light-section: linear-gradient(135deg, #59656d 0%, #bae6fd 100%);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,0.08), transparent),
+                  linear-gradient(180deg,#0d1422 0%, #131b2e 100%);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      overflow-x: hidden;
+    }
+
+    /* Header */
+    .site-header{
+      position:fixed;left:0;right:0;top:0;z-index:40;
+      backdrop-filter: blur(6px);
+      background:linear-gradient(180deg, rgba(15,23,36,0.9), rgba(15,23,36,0.7));
+      border-bottom:1px solid rgba(255,255,255,0.03);
+      transition: var(--transition);
+    }
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;padding:14px 0;
+    }
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:120px;
+      height:60px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      transition: var(--transition);
+    }
+    .logo:hover {
+      transform: scale(1.05);
+    }
+    .brand h1{font-size:16px;margin:0}
+    .nav-links{display:flex;gap:18px;align-items:center}
+    .nav-links a{
+      color:var(--muted);
+      text-decoration:none;
+      font-weight:600;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: var(--transition);
+      position: relative;
+    }
+    .nav-links a:hover {
+      color: white;
+      background: rgba(124,58,237,0.1);
+      transform: translateY(-2px);
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg,var(--accent),#06b6d4);
+      transition: var(--transition);
+      transform: translateX(-50%);
+    }
+    .nav-links a:hover::after {
+      width: 80%;
+    }
+    .cta{background:linear-gradient(90deg,var(--accent),#06b6d4);padding:8px 14px;border-radius:10px;color:white;text-decoration:none;font-weight:700;transition: var(--transition)}
+    .cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(124,58,237,0.3);
+    }
+
+    /* Language Selector */
+    .language-selector {
+      display: flex;
+      gap: 8px;
+      margin-left: 15px;
+      position: relative;
+    }
+    .lang-btn {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--muted);
+      padding: 4px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .lang-btn.active {
+      background: rgba(124,58,237,0.2);
+      color: white;
+      border-color: var(--accent);
+    }
+    .lang-btn:hover {
+      background: rgba(124,58,237,0.1);
+      color: white;
+    }
+    .flag {
+      width: 16px;
+      height: 12px;
+      border-radius: 2px;
+      background-size: cover;
+      background-position: center;
+    }
+    .flag-fr {
+      background: linear-gradient(90deg, #002395 33%, white 33%, white 66%, #ED2939 66%);
+    }
+    .flag-en {
+      background: 
+        linear-gradient(0deg, 
+          #B22234 0%,
+          #B22234 7.7%,
+          white 7.7%,
+          white 15.4%,
+          #B22234 15.4%,
+          #B22234 23.1%,
+          white 23.1%,
+          white 30.8%,
+          #B22234 30.8%,
+          #B22234 38.5%,
+          white 38.5%,
+          white 46.2%,
+          #B22234 46.2%,
+          #B22234 53.9%,
+          white 53.9%,
+          white 61.6%,
+          #B22234 61.6%,
+          #B22234 69.3%,
+          white 69.3%,
+          white 77%,
+          #B22234 77%,
+          #B22234 84.7%,
+          white 84.7%,
+          white 92.4%,
+          #B22234 92.4%
+        ),
+        #3C3B6E;
+      background-blend-mode: normal;
+      background-position: 0 0, 0 0;
+      background-size: 40% 100%, 100% 100%;
+      background-repeat: no-repeat;
+    }
+
+    /* Mobile */
+    .menu-toggle{display:none;background:transparent;border:0;color:var(--muted);font-size:20px;cursor:pointer;transition:var(--transition)}
+    .menu-toggle:hover{color:white}
+    @media(max-width:880px){
+      .nav-links{display:none}
+      .menu-toggle{display:block}
+      .language-selector { margin-left: 0; }
+      .logo {
+        width: 100px;
+        height: 50px;
+      }
+    }
+
+    /* Hero */
+    .hero{padding:120px 0 60px}
+    .hero-grid{display:grid;grid-template-columns:1fr 420px;gap:40px;align-items:center}
+    .eyebrow{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--glass);color:var(--muted);font-weight:600;margin-bottom:16px;animation: pulse 2s infinite}
+    .h-title{font-size:44px;line-height:1.03;margin:0 0 16px}
+    .lead{color:var(--muted);max-width:62ch;margin-bottom:22px}
+    .hero-cta{display:flex;gap:12px}
+    .btn{padding:12px 16px;border-radius:12px;text-decoration:none;font-weight:700;transition:var(--transition);display:inline-flex;align-items:center;gap:8px}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),#06b6d4);color:white}
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(124,58,237,0.3);
+    }
+    .btn-outline{border:1px solid rgba(255,255,255,0.06);color:var(--muted);background:transparent}
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.05);
+      color: white;
+      transform: translateY(-2px);
+      border-color: var(--accent-light);
+    }
+    .btn-track {
+      background: linear-gradient(90deg, #10b981, #06b6d4);
+      color: white;
+    }
+    .btn-track:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+    }
+
+    /* Card on right */
+    .hero-card{background:linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.03);transition:var(--transition)}
+    .hero-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      border-color: rgba(124,58,237,0.2);
+    }
+    .stat{display:flex;justify-content:space-between;gap:12px}
+    .stat .num{font-weight:800;font-size:20px}
+    .stat .meta{color:var(--muted);font-size:13px}
+
+    /* Features */
+    .features{padding:40px 0}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .feature{background:linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);transition:var(--transition)}
+    .feature:hover {
+      transform: translateY(-5px);
+      border-color: rgba(124,58,237,0.2);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    .feature h3{margin:12px 0 8px}
+    .feature p{color:var(--muted);margin:0}
+    @media(max-width:880px){.hero-grid{grid-template-columns:1fr;}.grid-3{grid-template-columns:1fr}}
+
+    /* Partners */
+    .partners{padding:40px 0}
+    .partners-container {
+      position: relative;
+      overflow: hidden;
+    }
+    .partners-scroll {
+      display: flex;
+      animation: scrollPartners 30s linear infinite;
+      gap: 40px;
+    }
+    .partner-logo{
+      background:linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      height:100px;
+      min-width: 200px;
+      border-radius:10px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      transition:var(--transition);
+      border:1px solid rgba(255,255,255,0.03);
+      flex-shrink: 0;
+    }
+    .partner-logo:hover {
+      transform: translateY(-5px);
+      border-color: rgba(124,58,237,0.3);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .partner-img {
+      max-width: 80%;
+      max-height: 60px;
+     
+      opacity: 0.8;
+      transition: var(--transition);
+    }
+    .partner-logo:hover .partner-img {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    @keyframes scrollPartners {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(calc(-200px * 8 - 40px * 8));
+      }
+    }
+
+    /* Testimonials */
+    .testi{padding:40px 0}
+    .carousel{position:relative;overflow:hidden;border-radius:12px}
+    .slides{display:flex;transition:transform .5s cubic-bezier(.2,.9,.3,1)}
+    .slide{min-width:100%;padding:24px;background:var(--testimonial-bg);border-radius:12px;transition:var(--transition);border:1px solid rgba(124,58,237,0.1)}
+    .slide:hover {
+      border-color: rgba(124,58,237,0.2);
+      box-shadow: 0 5px 15px rgba(124,58,237,0.1);
+    }
+
+    /* About Section */
+    .about-section {
+      padding: 80px 0;
+      background: var(--light-section);
+      color: #1e293b;
+    }
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .about-text h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, var(--accent), #111212);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .about-text p {
+      color: #141414;
+      margin-bottom: 20px;
+      line-height: 1.6;
+      font-weight: bold;
+    }
+    .about-stats {
+      display: flex;
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .stat-item {
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 32px;
+      font-weight: 800;
+      background: linear-gradient(90deg, var(--accent), #06b6d4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 5px;
+    }
+    .stat-label {
+      color: #64748b;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .about-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .about-logo {
+      max-width: 300px;
+      height: auto;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
+    }
+
+    /* Footer */
+    footer {
+      padding: 28px 0;
+      color: var(--muted);
+      border-top: 1px solid rgba(255,255,255,0.03);
+    }
+    .footer-logo {
+      height: 70px;
+      margin-bottom: 10px;
+    }
+
+    /* small helpers */
+    .muted{color:var(--muted)}
+    .glass{background:var(--glass);padding:12px;border-radius:12px;transition:var(--transition)}
+    .glass:hover {
+      background: rgba(255,255,255,0.06);
+    }
+
+    /* subtle animations */
+    .fade-up{opacity:0;transform:translateY(8px);transition:all .6s ease-out}
+    .fade-up.in{opacity:1;transform:none}
+
+    /* utilities */
+    .mb-8{margin-bottom:32px}
+    .mt-4{margin-top:16px}
+    
+    /* AlerteEthics specific styles */
+    .security-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      background: rgba(124, 58, 237, 0.1);
+      border-radius: 999px;
+      font-size: 12px;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      transition: var(--transition);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .security-badge:hover {
+      background: rgba(124, 58, 237, 0.2);
+      transform: scale(1.05);
+    }
+    
+    .channel-options {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    
+    .channel-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px;
+      background: rgba(255,255,255,0.02);
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.03);
+      transition: var(--transition);
+    }
+    .channel-option:hover {
+      background: rgba(255,255,255,0.05);
+      transform: translateX(5px);
+    }
+    
+    .channel-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--accent), #06b6d4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      transition: var(--transition);
+    }
+    .channel-option:hover .channel-icon {
+      transform: scale(1.1);
+    }
+    
+    .protocol-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    
+    .protocol-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      transition: var(--transition);
+    }
+    .protocol-step:hover {
+      transform: translateX(5px);
+    }
+    
+    .step-number {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), #06b6d4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      flex-shrink: 0;
+      transition: var(--transition);
+      color: white;
+    }
+    .protocol-step:hover .step-number {
+      transform: scale(1.1);
+    }
+    
+    /* Floating elements */
+    .floating {
+      animation: floating 3s ease-in-out infinite;
+    }
+    
+    @keyframes floating {
+      0% { transform: translate(0, 0px); }
+      50% { transform: translate(0, -10px); }
+      100% { transform: translate(0, 0px); }
+    }
+    
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.4); }
+      70% { box-shadow: 0 0 0 10px rgba(124, 58, 237, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0); }
+    }
+    
+    /* Language content */
+    .lang-content {
+      display: none;
+    }
+    .lang-content.active {
+      display: block;
+    }
+    
+    
+    .logo-img {
+      height: 220%;
+      width: auto;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .about-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .about-stats {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">
+         
+          <img src="image/logoofficielle.png" alt="Alerte Sénégal" class="logo-img" />
+        </div>
+      </div>
+
+      <nav>
+        <button class="menu-toggle" id="menuToggle">☰</button>
+        <div class="nav-links" id="navLinks">
+          <a href="#accueil">Accueil</a>
+          <a href="soumettre.php">Soumettre une alerte</a>
+          <a href="suivi.php">Suivre une alerte</a>
+          <a href="apropos.html">À propos</a>
+          <a href="confidentialite.html">Confidentialité</a>
+          <div class="language-selector">
+            <button class="lang-btn active" data-lang="fr">
+              <div class="flag flag-fr"></div>
+              FR
+            </button>
+            <button class="lang-btn" data-lang="en">
+              <div class="flag flag-en"></div>
+              EN
+            </button>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    
+    <section class="hero container lang-content active" data-lang="fr">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow floating">Plateforme Officielle</span>
+          <h2 class="h-title">Signalement Éthique Sécurisé pour le Sénégal</h2>
+          <p class="lead">Alerte Sénégal est la plateforme nationale de signalement anonyme et sécurisé, utilisant la technologie blockchain pour garantir l'intégrité des alertes et protéger les lanceurs d'alerte contre toute représailles.</p>
+
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="soumettre.php">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M14 2V8H20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 13H8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 17H8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10 9H9H8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Déposer une alerte
+            </a>
+            <a class="btn btn-track" href="suivi.php">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Suivre une alerte
+            </a>
+          </div>
+
+          <div class="mt-4 glass" style="margin-top:22px;">
+            <div style="display:flex;gap:16px;align-items:center">
+              <div style="flex:1">
+                <div style="font-weight:800">Anonymat</div>
+                <div class="muted" style="font-size:12px">Protection totale</div>
+              </div>
+              <div style="flex:1">
+                <div style="font-weight:800">Blockchain</div>
+                <div class="muted" style="font-size:12px">Preuves horodatées</div>
+              </div>
+              <div style="flex:1">
+                <div style="font-weight:800">Multi-canaux</div>
+                <div class="muted" style="font-size:12px">Web, App</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-card floating">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+            <div style="width:70px;height:70px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#06b6d4);display:flex;align-items:center;justify-content:center;font-weight:800;padding:5px">
+              <img src="image/logoofficielle.png" alt="Alerte Sénégal" style="width: 60px; height: 60px; border-radius: 6px;" />
+            </div>
+            <div>
+              <div style="font-weight:800">Alerte Sénégal</div>
+              <div class="muted" style="font-size:13px">Pour tous les citoyens</div>
+            </div>
+          </div>
+
+          <div class="stat mb-8">
+            <div>
+              <div class="num">Sécurisé</div>
+              <div class="meta">Chiffrement avancé</div>
+            </div>
+            <div>
+              <div class="num">Certifié</div>
+              <div class="meta">Normes internationales</div>
+            </div>
+          </div>
+
+          <div style="font-weight:600; margin-bottom: 12px;">Protocole de signalement</div>
+          <div class="protocol-steps">
+            <div class="protocol-step">
+              <div class="step-number">1</div>
+              <div>
+                <div style="font-weight:600">Déposer</div>
+                <div class="muted" style="font-size:13px">Remplissez le formulaire sécurisé</div>
+              </div>
+            </div>
+            <div class="protocol-step">
+              <div class="step-number">2</div>
+              <div>
+                <div style="font-weight:600">Recevoir</div>
+                <div class="muted" style="font-size:13px">Obtenez votre code de suivi</div>
+              </div>
+            </div>
+            <div class="protocol-step">
+              <div class="step-number">3</div>
+              <div>
+                <div style="font-weight:600">Suivre</div>
+                <div class="muted" style="font-size:13px">Consultez l'avancement anonymement</div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+   
+    <section class="hero container lang-content" data-lang="en">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow floating">Official Platform</span>
+          <h2 class="h-title">Secure Ethical Reporting for Senegal</h2>
+          <p class="lead">Alerte Senegal is the national secure and anonymous reporting platform, using blockchain technology to ensure alert integrity and protect whistleblowers from any retaliation.</p>
+
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="soumettre.php">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M14 2V8H20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 13H8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 17H8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10 9H9H8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Submit an alert
+            </a>
+            <a class="btn btn-track" href="suivi.php">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Track an alert
+            </a>
+          </div>
+
+          <div class="mt-4 glass" style="margin-top:22px;">
+            <div style="display:flex;gap:16px;align-items:center">
+              <div style="flex:1">
+                <div style="font-weight:800">Anonymity</div>
+                <div class="muted" style="font-size:12px">Full protection</div>
+              </div>
+              <div style="flex:1">
+                <div style="font-weight:800">Blockchain</div>
+                <div class="muted" style="font-size:12px">Timestamped proofs</div>
+              </div>
+              <div style="flex:1">
+                <div style="font-weight:800">Multi-channel</div>
+                <div class="muted" style="font-size:12px">Web, App</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-card floating">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+            <div style="width:70px;height:70px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#06b6d4);display:flex;align-items:center;justify-content:center;font-weight:800;padding:5px">
+              <img src="image/logoofficielle.png" alt="Alerte Senegal" style="width: 60px; height: 60px; border-radius: 6px;" />
+            </div>
+            <div>
+              <div style="font-weight:800">Alerte Senegal</div>
+              <div class="muted" style="font-size:13px">For all citizens</div>
+            </div>
+          </div>
+
+          <div class="stat mb-8">
+            <div>
+              <div class="num">Secure</div>
+              <div class="meta">Advanced encryption</div>
+            </div>
+            <div>
+              <div class="num">Certified</div>
+              <div class="meta">International standards</div>
+            </div>
+          </div>
+
+          <div style="font-weight:600; margin-bottom: 12px;">Reporting Protocol</div>
+          <div class="protocol-steps">
+            <div class="protocol-step">
+              <div class="step-number">1</div>
+              <div>
+                <div style="font-weight:600">Submit</div>
+                <div class="muted" style="font-size:13px">Fill out the secure form</div>
+              </div>
+            </div>
+            <div class="protocol-step">
+              <div class="step-number">2</div>
+              <div>
+                <div style="font-weight:600">Receive</div>
+                <div class="muted" style="font-size:13px">Get your tracking code</div>
+              </div>
+            </div>
+            <div class="protocol-step">
+              <div class="step-number">3</div>
+              <div>
+                <div style="font-weight:600">Track</div>
+                <div class="muted" style="font-size:13px">Check progress anonymously</div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+   
+    <section id="features" class="features container">
+      <h3 class="mb-8" data-fr="Fonctionnalités Principales" data-en="Key Features">Fonctionnalités Principales</h3>
+      <div class="grid-3">
+        <div class="feature fade-up">
+          <div style="font-size:22px;font-weight:800" data-fr="Anonymat Garanti" data-en="Guaranteed Anonymity">Anonymat Garantie</div>
+          <p data-fr="Authentification sans identification personnelle. Aucune donnée personnelle n'est collectée ou stockée." data-en="Authentication without personal identification. No personal data is collected or stored.">Authentification sans identification personnelle. Aucune donnée personnelle n'est collectée ou stockée.</p>
+          <div class="security-badge" data-fr="Sans identification" data-en="No identification">Sans identification</div>
+          <div class="security-badge" data-fr="Confidentialité" data-en="Confidentiality">Confidentialité</div>
+        </div>
+        <div class="feature fade-up">
+          <div style="font-size:22px;font-weight:800" data-fr="Preuves Immuables" data-en="Immutable Evidence">Preuves Immuables</div>
+          <p data-fr="Horodatage certifié par blockchain pour une traçabilité et une intégrité des alertes inaltérables." data-en="Blockchain-certified timestamping for unalterable traceability and integrity of alerts.">Horodatage certifié par blockchain pour une traçabilité et une intégrité des alertes inaltérables.</p>
+          <div class="security-badge" data-fr="Horodatage" data-en="Timestamping">Horodatage</div>
+          <div class="security-badge" data-fr="Blockchain" data-en="Blockchain">Blockchain</div>
+        </div>
+        <div class="feature fade-up">
+          <div style="font-size:22px;font-weight:800" data-fr="Accessibilité Universelle" data-en="Universal Accessibility">Accessibilité Universelle</div>
+          <p data-fr="Multi-canaux (web, application mobile) adaptés à tous les publics, y compris les moins connectés." data-en="Multi-channel (web, mobile app) adapted to all audiences, including the less connected.">Multi-canaux (web, application mobile) adaptés à tous les publics, y compris les moins connectés.</p>
+          <div class="security-badge" data-fr="Multi-langues" data-en="Multi-language">Multi-langues</div>  <div class="security-badge" data-fr="SMS inclus" data-en="SMS included">SMS inclus</div>
+        </div>
+      </div>
+    </section>
+
+   
+    <section class="partners container">
+      <h3 class="mb-8" data-fr="Institutions Partenaires" data-en="Partner Institutions">Institutions Partenaires</h3>
+      <div class="partners-container">
+        <div class="partners-scroll">
+          <!-- Doubler les logos pour créer un effet de défilement infini -->
+          <div class="partner-logo">
+            <img src="image/ofnac.jpg" alt="OFNAC" class="partner-img" />
+          </div>
+          <div class="partner-logo">
+            <img src="image/galsen.PNG" alt="Gouvernement du Sénégal" class="partner-img" />
+          </div>
+          <div class="partner-logo">
+            <img src="image/ue.PNG" alt="Union Européenne" class="partner-img" />
+          </div>
+          <div class="partner-logo">
+            <img src="image/trans.JPG" alt="Transparency International" class="partner-img" />
+          </div>
+          <div class="partner-logo">
+            <img src="image/nationsunies.PNG" alt="Nations Unies" class="partner-img" />
+          </div>
+          <div class="partner-logo">
+            <img src="image/banque.JPG" alt="Banque Mondiale" class="partner-img" />
+          </div>
+          <div class="partner-logo">
+            <img src="image/pnas.PNG" alt="PNAS" class="partner-img" />
+          </div>
+          <div class="partner-logo">
+            <img src="image/cours.PNG" alt="Cour des Comptes" class="partner-img" />
+          </div>
+          <!-- Doublons pour l'effet de défilement infini -->
+          <div class="partner-logo">
+            <img src="image/ofnac.jpg" alt="OFNAC" class="partner-img" />
+          </div>
+          <div class="partner-logo">
+            <img src="image/galsen.PNG" alt="Gouvernement du Sénégal" class="partner-img" />
+          </div>
+          <div class="partner-logo">
+            <img src="image/ue.PNG" alt="Union Européenne" class="partner-img" />
+          </div>
+          <div class="partner-logo">
+            <img src="image/trans.JPG" alt="Transparency International" class="partner-img" />
+          </div>
+          <div class="partner-logo">
+            <img src="image/nationsunies.PNG" alt="Nations Unies" class="partner-img" />
+          </div>
+          <div class="partner-logo">
+            <img src="image/banque.JPG" alt="Banque Mondiale" class="partner-img" />
+          </div>
+          <div class="partner-logo">
+            <img src="image/pnas.PNG" alt="PNAS" class="partner-img" />
+          </div>
+          <div class="partner-logo">
+            <img src="image/cours.PNG" alt="Cour des Comptes" class="partner-img" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="apropos" class="about-section">
+      <div class="container about-content">
+        <div class="about-text">
+          <h2 data-fr="À propos d'Alerte Sénégal" data-en="About Alerte Senegal">À propos d'Alerte Sénégal</h2>
+          <p data-fr="Alerte Sénégal est la plateforme officielle de signalement éthique, développée avec le soutien d'institutions nationales et internationales. Notre mission est de renforcer la transparence et la confiance dans les institutions sénégalaises tout en protégeant les lanceurs d'alerte." data-en="Alerte Senegal is the official ethical reporting platform, developed with the support of national and international institutions. Our mission is to strengthen transparency and trust in Senegalese institutions while protecting whistleblowers.">Alerte Sénégal est la plateforme officielle de signalement éthique, développée avec le soutien d'institutions nationales et internationales. Notre mission est de renforcer la transparence et la confiance dans les institutions sénégalaises tout en protégeant les lanceurs d'alerte.</p>
+          <p data-fr="Nous utilisons les technologies les plus avancées, incluant la blockchain et le chiffrement de bout en bout, pour garantir la sécurité et l'anonymat des personnes qui signalent des cas de corruption, de harcèlement ou de manquements éthiques." data-en="We use the most advanced technologies, including blockchain and end-to-end encryption, to ensure the security and anonymity of people reporting cases of corruption, harassment or ethical misconduct.">Nous utilisons les technologies les plus avancées, incluant la blockchain et le chiffrement de bout en bout, pour garantir la sécurité et l'anonymat des personnes qui signalent des cas de corruption, de harcèlement ou de manquements éthiques.</p>
+          <div class="about-stats">
+            <div class="stat-item">
+              <div class="stat-number">100%</div>
+              <div class="stat-label" data-fr="Anonymat" data-en="Anonymity">Anonymat</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">24h/24</div>
+              <div class="stat-label" data-fr="Disponible" data-en="Available">Disponible</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">3</div>
+              <div class="stat-label" data-fr="Canaux" data-en="Channels">Canaux</div>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual">
+          <img src="image/logoofficielle.png" alt="Alerte Sénégal" class="about-logo" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testi container">
+      <h3 class="mb-8" data-fr="Témoignages" data-en="Testimonials">Témoignages</h3>
+      <div class="carousel">
+        <div class="slides" id="slides">
+          <div class="slide">
+            <p style="margin-top:0" data-fr="« Alerte Sénégal a transformé notre capacité à recevoir des signalements fiables tout en protégeant les lanceurs d'alerte. L'outil est devenu indispensable dans notre lutte contre la corruption. »" data-en="“Alerte Senegal has transformed our ability to receive reliable reports while protecting whistleblowers. The tool has become indispensable in our fight against corruption.”">« Alerte Sénégal a transformé notre capacité à recevoir des signalements fiables tout en protégeant les lanceurs d'alerte. L'outil est devenu indispensable dans notre lutte contre la corruption. »</p>
+            <div style="margin-top:12px;font-weight:700" data-fr="— Représentant OFNAC" data-en="— OFNAC Representative">— Représentant OFNAC</div>
+          </div>
+          <div class="slide">
+            <p style="margin-top:0" data-fr="« La plateforme nous permet de maintenir un climat de confiance avec nos employés tout en respectant les normes éthiques les plus strictes. L'interface est intuitive et sécurisée. »" data-en="“The platform allows us to maintain a climate of trust with our employees while respecting the strictest ethical standards. The interface is intuitive and secure.”">« La plateforme nous permet de maintenir un climat de confiance avec nos employés tout en respectant les normes éthiques les plus strictes. L'interface est intuitive et sécurisée. »</p>
+            <div style="margin-top:12px;font-weight:700" data-fr="— Directeur Ressources Humaines" data-en="— Human Resources Director">— Directeur Ressources Humaines</div>
+          </div>
+          <div class="slide">
+            <p style="margin-top:0" data-fr="« En tant que citoyen, je me sens enfin protégé lorsque je signale des irrégularités. L'anonymat est réel et le processus simple à utiliser. »" data-en="“As a citizen, I finally feel protected when reporting irregularities. The anonymity is real and the process is easy to use.”">« En tant que citoyen, je me sens enfin protégé lorsque je signale des irrégularités. L'anonymat est réel et le processus simple à utiliser. »</p>
+            <div style="margin-top:12px;font-weight:700" data-fr="— Citoyen, Dakar" data-en="— Citizen, Dakar">— Citoyen, Dakar</div>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;margin-top:12px">
+        <button class="btn-outline" id="prev" data-fr="Précédent" data-en="Previous">Précédent</button>
+        <button class="btn-outline" id="next" data-fr="Suivant" data-en="Next">Suivant</button>
+      </div>
+    </section>
+
+    <!-- Actions Section -->
+    <section id="contact" class="container" style="padding:40px 0 120px">
+      <h3 data-fr="Actions Immédiates" data-en="Immediate Actions">Actions Immédiates</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:18px">
+        <div class="glass" style="padding:24px">
+          <div style="font-weight:800; font-size:20px; margin-bottom:16px" data-fr="Déposer une Alerte" data-en="Submit an Alert">Déposer une Alerte</div>
+          <p class="muted" style="margin-bottom:20px" data-fr="Signalez de manière sécurisée et anonyme tout cas de corruption, harcèlement ou manquement éthique." data-en="Securely and anonymously report any case of corruption, harassment or ethical misconduct.">Signalez de manière sécurisée et anonyme tout cas de corruption, harcèlement ou manquement éthique.</p>
+          <a class="btn btn-primary" href="soumettre.php" style="display:inline-block" data-fr="Accéder au formulaire" data-en="Access the form">Accéder au formulaire</a>
+        </div>
+        
+        <div class="glass" style="padding:24px">
+          <div style="font-weight:800; font-size:20px; margin-bottom:16px" data-fr="Suivre une Alerte" data-en="Track an Alert">Suivre une Alerte</div>
+          <p class="muted" style="margin-bottom:20px" data-fr="Consultez l'avancement du traitement de votre signalement en utilisant votre code de suivi." data-en="Check the progress of your report processing using your tracking code.">Consultez l'avancement du traitement de votre signalement en utilisant votre code de suivi.</p>
+          <a class="btn btn-track" href="suivi.php" style="display:inline-block" data-fr="Vérifier le statut" data-en="Check status">Vérifier le statut</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center">
+      <div>
+        <img src="image/logoofficielle.png" alt="Alerte Sénégal" class="footer-logo" />
+        <div class="muted" style="font-size:13px" data-fr="© 2025 Alerte Sénégal - Pour la transparence et la bonne gouvernance" data-en="© 2025 Alerte Senegal - For transparency and good governance">© 2025 Alerte Sénégal - Pour la transparence et la bonne gouvernance</div>
+      </div>
+      <div class="muted" data-fr="Renforcement de la transparence et de la bonne gouvernance" data-en="Strengthening transparency and good governance">Renforcement de la transparence et de la bonne gouvernance</div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', ()=>{
+      if(navLinks.style.display === 'flex') navLinks.style.display = '';
+      else navLinks.style.display = 'flex';
+      navLinks.style.flexDirection = 'column';
+      navLinks.style.gap = '12px';
+      navLinks.style.alignItems = 'flex-end';
+      navLinks.style.padding = '12px';
+      navLinks.style.background = 'linear-gradient(180deg, rgba(7,10,18,0.95), rgba(7,10,18,0.98))';
+      navLinks.style.borderRadius = '12px';
+      navLinks.style.position = 'absolute';
+      navLinks.style.right = '20px';
+      navLinks.style.top = '64px';
+    });
+
+    // Reveal on scroll
+    const observers = document.querySelectorAll('.fade-up');
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in') });
+    }, {threshold:0.12});
+    observers.forEach(n=>io.observe(n));
+
+    // Testimonials simple carousel
+    const slides = document.getElementById('slides');
+    const next = document.getElementById('next');
+    const prev = document.getElementById('prev');
+    let idx = 0;
+    function show(i){
+      idx = (i + slides.children.length) % slides.children.length;
+      slides.style.transform = `translateX(-${idx * 100}%)`;
+    }
+    next.addEventListener('click', ()=> show(idx+1));
+    prev.addEventListener('click', ()=> show(idx-1));
+
+    // Language switching
+    const langButtons = document.querySelectorAll('.lang-btn');
+    const langContents = document.querySelectorAll('.lang-content');
+    
+    langButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const lang = button.getAttribute('data-lang');
+        
+        // Update active button
+        langButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        
+        // Show correct language content
+        langContents.forEach(content => {
+          content.classList.remove('active');
+          if (content.getAttribute('data-lang') === lang) {
+            content.classList.add('active');
+          }
+        });
+        
+        // Update all elements with data attributes
+        document.querySelectorAll('[data-fr]').forEach(element => {
+          if (lang === 'fr') {
+            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+              element.placeholder = element.getAttribute('data-fr');
+            } else {
+              element.textContent = element.getAttribute('data-fr');
+            }
+          } else {
+            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+              element.placeholder = element.getAttribute('data-en');
+            } else {
+              element.textContent = element.getAttribute('data-en');
+            }
+          }
+        });
+      });
+    });
+
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const target = document.querySelector(a.getAttribute('href'));
+        if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth',block:'start'}); }
+      });
+    });
+
+    // Add floating animation to multiple elements
+    document.querySelectorAll('.feature, .partner-logo').forEach((el, index) => {
+      el.style.animationDelay = `${index * 0.1}s`;
+      el.classList.add('floating');
+    });
+  </script>
+</body>
+</html>

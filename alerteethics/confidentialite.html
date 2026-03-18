@@ -1,0 +1,816 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Politique de Confidentialité - Alerte Sénégal</title>
+  <meta name="description" content="Politique de confidentialité de la plateforme Alerte Sénégal - Protection des données et vie privée conformément aux lois sénégalaises." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f1724;
+      --card: #1a2332;
+      --accent: #441c8a;
+      --accent-light: #6d28d9;
+      --muted: #94a3b8;
+      --text: #e2e8f0;
+      --transition: all 0.3s ease;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    html, body {
+      height: 100%;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    /* Header */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(15, 23, 36, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 1rem 0;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .logo {
+      width: 100px;
+      height: 100px;
+      transition: var(--transition);
+    }
+    
+    .logo:hover {
+      transform: scale(1.05);
+    }
+    
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .brand-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: white;
+    }
+    
+    .brand-subtitle {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: var(--transition);
+    }
+    
+    .nav-links a:hover {
+      color: white;
+      background: rgba(68, 28, 138, 0.1);
+    }
+
+ 
+    .language-selector {
+      display: flex;
+      gap: 0.5rem;
+      margin-left: 1rem;
+    }
+    
+    .lang-btn {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--muted);
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    
+    .lang-btn.active {
+      background: rgba(68, 28, 138, 0.2);
+      color: white;
+      border-color: var(--accent);
+    }
+    
+    .lang-btn:hover {
+      background: rgba(68, 28, 138, 0.1);
+      color: white;
+    }
+    
+    .flag {
+      width: 16px;
+      height: 12px;
+      border-radius: 2px;
+      background-size: cover;
+    }
+    
+    .flag-fr {
+      background: linear-gradient(90deg, #002395 33%, white 33%, white 66%, #ED2939 66%);
+    }
+    
+    .flag-en {
+      background: linear-gradient(90deg, #012169 0%, #012169 30%, white 30%, white 34%, #C8102E 34%, #C8102E 66%, white 66%, white 70%, #012169 70%);
+    }
+    
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    /* Language content */
+    .lang-content {
+      display: none;
+    }
+    
+    .lang-content.active {
+      display: block;
+    }
+    
+    /* Main Content */
+    .privacy-container {
+      padding-top: 120px;
+      padding-bottom: 4rem;
+    }
+    
+    .privacy-header {
+      text-align: center;
+      margin-bottom: 4rem;
+      padding: 3rem 0;
+    }
+    
+    .privacy-title {
+      font-size: 3rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+    }
+    
+    .privacy-subtitle {
+      font-size: 1.25rem;
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .privacy-content {
+      display: grid;
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .privacy-card {
+      background: var(--card);
+      padding: 2.5rem;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: var(--transition);
+    }
+    
+    .privacy-card:hover {
+      border-color: rgba(68, 28, 138, 0.3);
+      transform: translateY(-2px);
+    }
+    
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--accent);
+    }
+    
+    .subsection-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: white;
+      margin: 2rem 0 1rem 0;
+    }
+    
+    .privacy-text {
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    
+    .privacy-list {
+      color: var(--muted);
+      margin: 1rem 0;
+      padding-left: 1.5rem;
+    }
+    
+    .privacy-list li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .legal-note {
+      background: rgba(68, 28, 138, 0.1);
+      border-left: 4px solid var(--accent);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 8px;
+    }
+    
+    .legal-note strong {
+      color: white;
+    }
+    
+    .contact-section {
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      padding: 3rem;
+      border-radius: 16px;
+      text-align: center;
+      margin-top: 3rem;
+    }
+    
+    .contact-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 1.5rem;
+    }
+    
+    .contact-info {
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 1rem;
+    }
+    
+    /* Footer */
+    .site-footer {
+      background: var(--card);
+      padding: 3rem 0 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .footer-logo {
+      width: 200px; 
+      height: auto;
+    }
+    
+    .footer-links {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    
+    .footer-column h4 {
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .footer-column a {
+      color: var(--muted);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.5rem;
+      transition: var(--transition);
+    }
+    
+    .footer-column a:hover {
+      color: white;
+    }
+    
+    .footer-bottom {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.875rem;
+    }
+    
+   
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 1.25rem;
+      transition: var(--transition);
+      opacity: 0;
+      visibility: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .back-to-top:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 1rem;
+      }
+      
+      .menu-toggle {
+        display: block;
+      }
+      
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--card);
+        flex-direction: column;
+        padding: 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        gap: 1rem;
+      }
+      
+      .nav-links.active {
+        display: flex;
+      }
+      
+      .language-selector {
+        margin-left: 0;
+        justify-content: center;
+      }
+      
+      .privacy-title {
+        font-size: 2rem;
+      }
+      
+      .privacy-card {
+        padding: 1.5rem;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .footer-links {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      
+      .footer-logo {
+        width: 100px; 
+      }
+      
+      .contact-section {
+        padding: 2rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav">
+        <div class="brand">
+          <img src="image/logoofficielle.png" alt="Alerte Sénégal" class="logo">
+          
+        <div class="brand-text">
+            <div class="brand-name">Alerte Sénégal</div>
+            <div class="brand-subtitle">Signalement Éthique Sécurisé</div>
+          </div>
+        </div>
+        <button class="menu-toggle" id="menuToggle">☰</button>
+        
+        <div class="nav-links" id="navLinks">
+          <a href="index.html">Accueil</a>
+          <a href="soumettre.php">Soumettre une alerte</a>
+          <a href="suivi.php">Suivre une alerte</a>
+          <a href="apropos.html">À propos</a>
+         
+          <div class="language-selector">
+            <button class="lang-btn active" data-lang="fr">
+              <div class="flag flag-fr"></div>
+              FR
+            </button>
+            <button class="lang-btn" data-lang="en">
+              <div class="flag flag-en"></div>
+              EN
+            </button>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container privacy-container">
+    
+    <div class="lang-content active" data-lang="fr">
+      <div class="privacy-header">
+        <h1 class="privacy-title">Politique de Confidentialité</h1>
+        <p class="privacy-subtitle">Protection de vos données personnelles et respect de votre vie privée conformément à la législation sénégalaise</p>
+      </div>
+
+      <div class="privacy-content">
+        <section class="privacy-card">
+          <h2 class="section-title">1. Introduction</h2>
+          <p class="privacy-text">La plateforme <strong>Alerte Sénégal</strong> s'engage à protéger la vie privée et les données personnelles de ses utilisateurs. Cette politique de confidentialité décrit comment nous collectons, utilisons, stockons et protégeons vos informations.</p>
+          
+          <div class="legal-note">
+            <p><strong>Référence légale :</strong> Loi n° 2008-12 du 25 janvier 2008 relative à la protection des données à caractère personnel - République du Sénégal</p>
+          </div>
+        </section>
+
+        <section class="privacy-card">
+          <h2 class="section-title">2. Principe Fondamental : Anonymat</h2>
+          <p class="privacy-text"><strong>Alerte Sénégal</strong> a été conçue avec comme principe fondamental la protection de l'anonymat des lanceurs d'alerte.</p>
+          <ul class="privacy-list">
+            <li><strong>Aucune collecte d'identité :</strong> Nous ne demandons ni ne stockons aucune information permettant votre identification</li>
+            <li><strong>Authentification sans identification :</strong> Accès sans nécessité de données personnelles</li>
+            <li><strong>Chiffrement de bout en bout :</strong> Toutes les communications sont sécurisées</li>
+          </ul>
+        </section>
+
+        <section class="privacy-card">
+          <h2 class="section-title">3. Données Collectées</h2>
+          
+          <h3 class="subsection-title">3.1 Données techniques</h3>
+          <p class="privacy-text">Données non identifiantes collectées automatiquement :</p>
+          <ul class="privacy-list">
+            <li>Adresse IP (anonymisée)</li>
+            <li>Type de navigateur et version</li>
+            <li>Pages visitées et durée de visite</li>
+          </ul>
+
+          <h3 class="subsection-title">3.2 Contenu des alertes</h3>
+          <p class="privacy-text">Les informations de vos alertes sont :</p>
+          <ul class="privacy-list">
+            <li>Stockées de manière sécurisée et chiffrée</li>
+            <li>Accessibles uniquement par les autorités habilitées</li>
+            <li>Conservées pour la durée nécessaire au traitement</li>
+          </ul>
+        </section>
+
+        <section class="privacy-card">
+          <h2 class="section-title">4. Utilisation des Données</h2>
+          <p class="privacy-text">Les données collectées sont utilisées exclusivement pour :</p>
+          <ul class="privacy-list">
+            <li>Traiter et investiguer les alertes déposées</li>
+            <li>Améliorer le fonctionnement de la plateforme</li>
+            <li>Garantir la sécurité du système</li>
+            <li>Respecter nos obligations légales</li>
+          </ul>
+        </section>
+
+        <section class="privacy-card">
+          <h2 class="section-title">5. Protection des Données</h2>
+          <p class="privacy-text">Mesures de sécurité techniques et organisationnelles :</p>
+          <ul class="privacy-list">
+            <li><strong>Chiffrement blockchain :</strong> Horodatage et intégrité garantis</li>
+            <li><strong>Serveurs sécurisés :</strong> Hébergement au Sénégal</li>
+            <li><strong>Accès restreint :</strong> Personnel autorisé uniquement</li>
+            <li><strong>Audits réguliers :</strong> Contrôles de sécurité périodiques</li>
+          </ul>
+        </section>
+
+        <section class="privacy-card">
+          <h2 class="section-title">6. Conservation des Données</h2>
+          <p class="privacy-text">Conformément à la loi sénégalaise :</p>
+          <ul class="privacy-list">
+            <li><strong>Alertes traitées :</strong> 5 ans après clôture</li>
+            <li><strong>Données techniques :</strong> 12 mois maximum</li>
+            <li><strong>Preuves blockchain :</strong> Conservation permanente</li>
+          </ul>
+          
+          <div class="legal-note">
+            <p><strong>Article 13 de la loi 2008-12 :</strong> "Les données à caractère personnel ne peuvent être conservées au-delà de la durée nécessaire aux finalités pour lesquelles elles sont collectées et traitées."</p>
+          </div>
+        </section>
+
+        <section class="privacy-card">
+          <h2 class="section-title">7. Partage des Données</h2>
+          <p class="privacy-text">Vos informations ne sont partagées qu'avec :</p>
+          <ul class="privacy-list">
+            <li><strong>Autorités judiciaires compétentes</strong></li>
+            <li><strong>Institutions partenaires habilitées</strong> (OFNAC, etc.)</li>
+            <li><strong>Prestataires techniques</strong> sous stricte confidentialité</li>
+          </ul>
+          <p class="privacy-text"><strong>Aucune donnée n'est transférée en dehors du Sénégal</strong> sans consentement explicite.</p>
+        </section>
+
+        <section class="privacy-card">
+          <h2 class="section-title">8. Vos Droits</h2>
+          <p class="privacy-text">Conformément à la loi sénégalaise :</p>
+          <ul class="privacy-list">
+            <li><strong>Droit d'information</strong> sur l'utilisation de vos données</li>
+            <li><strong>Droit d'accès</strong> aux données vous concernant</li>
+            <li><strong>Droit de rectification</strong> des données inexactes</li>
+            <li><strong>Droit d'opposition</strong> au traitement</li>
+            <li><strong>Droit à l'effacement</strong> de vos données</li>
+          </ul>
+        </section>
+
+        <section class="contact-section">
+          <h3 class="contact-title">Contact Protection des Données</h3>
+          <p class="contact-info">
+            <strong>Délégué à la Protection des Données</strong><br>
+            Email : dpo@alertesenegal.sn<br>
+            Téléphone : +221 33 800 00 00
+          </p>
+          <p class="contact-info">
+            <strong>Commission de Protection des Données Personnelles (CDP)</strong><br>
+            Email : cdp@cdp.sn - Téléphone : +221 33 889 99 99
+          </p>
+        </section>
+      </div>
+    </div>
+
+    
+    <div class="lang-content" data-lang="en">
+      <div class="privacy-header">
+        <h1 class="privacy-title">Privacy Policy</h1>
+        <p class="privacy-subtitle">Protection of your personal data and respect for your privacy in accordance with Senegalese legislation</p>
+      </div>
+
+      <div class="privacy-content">
+        <section class="privacy-card">
+          <h2 class="section-title">1. Introduction</h2>
+          <p class="privacy-text">The <strong>Alerte Sénégal</strong> platform is committed to protecting the privacy and personal data of its users. This privacy policy describes how we collect, use, store and protect your information.</p>
+          
+          <div class="legal-note">
+            <p><strong>Legal reference:</strong> Law No. 2008-12 of January 25, 2008 on the protection of personal data - Republic of Senegal</p>
+          </div>
+        </section>
+
+        <section class="privacy-card">
+          <h2 class="section-title">2. Fundamental Principle: Anonymity</h2>
+          <p class="privacy-text"><strong>Alerte Sénégal</strong> was designed with the fundamental principle of protecting the anonymity of whistleblowers.</p>
+          <ul class="privacy-list">
+            <li><strong>No identity collection:</strong> We do not request or store any information that could identify you</li>
+            <li><strong>Authentication without identification:</strong> Access without requiring personal data</li>
+            <li><strong>End-to-end encryption:</strong> All communications are secured</li>
+          </ul>
+        </section>
+
+        <section class="privacy-card">
+          <h2 class="section-title">3. Data Collected</h2>
+          
+          <h3 class="subsection-title">3.1 Technical data</h3>
+          <p class="privacy-text">Non-identifying data collected automatically:</p>
+          <ul class="privacy-list">
+            <li>IP address (anonymized)</li>
+            <li>Browser type and version</li>
+            <li>Pages visited and visit duration</li>
+          </ul>
+
+          <h3 class="subsection-title">3.2 Alert content</h3>
+          <p class="privacy-text">Information from your alerts is:</p>
+          <ul class="privacy-list">
+            <li>Stored securely and encrypted</li>
+            <li>Accessible only to authorized authorities</li>
+            <li>Retained for the time necessary for processing</li>
+          </ul>
+        </section>
+
+        <section class="privacy-card">
+          <h2 class="section-title">4. Data Usage</h2>
+          <p class="privacy-text">Collected data is used exclusively for:</p>
+          <ul class="privacy-list">
+            <li>Processing and investigating submitted alerts</li>
+            <li>Improving platform functionality</li>
+            <li>Ensuring system security</li>
+            <li>Complying with our legal obligations</li>
+          </ul>
+        </section>
+
+        <section class="privacy-card">
+          <h2 class="section-title">5. Data Protection</h2>
+          <p class="privacy-text">Technical and organizational security measures:</p>
+          <ul class="privacy-list">
+            <li><strong>Blockchain encryption:</strong> Guaranteed timestamping and integrity</li>
+            <li><strong>Secure servers:</strong> Hosting in Senegal</li>
+            <li><strong>Restricted access:</strong> Authorized personnel only</li>
+            <li><strong>Regular audits:</strong> Periodic security controls</li>
+          </ul>
+        </section>
+
+        <section class="privacy-card">
+          <h2 class="section-title">6. Data Retention</h2>
+          <p class="privacy-text">In accordance with Senegalese law:</p>
+          <ul class="privacy-list">
+            <li><strong>Processed alerts:</strong> 5 years after closure</li>
+            <li><strong>Technical data:</strong> Maximum 12 months</li>
+            <li><strong>Blockchain evidence:</strong> Permanent retention</li>
+          </ul>
+          
+          <div class="legal-note">
+            <p><strong>Article 13 of Law 2008-12:</strong> "Personal data may not be kept beyond the period necessary for the purposes for which it is collected and processed."</p>
+          </div>
+        </section>
+
+        <section class="privacy-card">
+          <h2 class="section-title">7. Data Sharing</h2>
+          <p class="privacy-text">Your information is only shared with:</p>
+          <ul class="privacy-list">
+            <li><strong>Competent judicial authorities</strong></li>
+            <li><strong>Authorized partner institutions</strong> (OFNAC, etc.)</li>
+            <li><strong>Technical providers</strong> under strict confidentiality</li>
+          </ul>
+          <p class="privacy-text"><strong>No data is transferred outside Senegal</strong> without explicit consent.</p>
+        </section>
+
+        <section class="privacy-card">
+          <h2 class="section-title">8. Your Rights</h2>
+          <p class="privacy-text">In accordance with Senegalese law:</p>
+          <ul class="privacy-list">
+            <li><strong>Right to information</strong> about the use of your data</li>
+            <li><strong>Right of access</strong> to your data</li>
+            <li><strong>Right to rectification</strong> of inaccurate data</li>
+            <li><strong>Right to object</strong> to processing</li>
+            <li><strong>Right to erasure</strong> of your data</li>
+          </ul>
+        </section>
+
+        <section class="contact-section">
+          <h3 class="contact-title">Data Protection Contact</h3>
+          <p class="contact-info">
+            <strong>Data Protection Officer</strong><br>
+            Email: dpo@alertesenegal.sn<br>
+            Phone: +221 33 800 00 00
+          </p>
+          <p class="contact-info">
+            <strong>Personal Data Protection Commission (CDP)</strong><br>
+            Email: cdp@cdp.sn - Phone: +221 33 889 99 99
+          </p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="image/logoofficielle.png" alt="Alerte Sénégal" class="footer-logo">
+          <div>
+            <div style="color: white; font-weight: 600; margin-bottom: 0.5rem;">Alerte Sénégal</div>
+            <div style="color: var(--muted); font-size: 0.875rem;">Plateforme officielle de signalement éthique</div>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Navigation</h4>
+            <a href="index.html">Accueil</a>
+            <a href="soumettre.php">Soumettre une alerte</a>
+            <a href="suivi.php">Suivre une alerte</a>
+          </div>
+          
+          <div class="footer-column">
+            <h4>À propos</h4>
+            <a href="apropos.html">Notre mission</a>
+            <a href="confidentialite.html">Confidentialité</a>
+            <a href="mentions-legales.html">Mentions légales</a>
+          </div>
+          
+          <div class="footer-column">
+            <h4>Contact</h4>
+            <a href="contact.html">Nous contacter</a>
+            <a href="faq.html">FAQ</a>
+            <a href="support.html">Support</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© 2025 Alerte Sénégal - Conforme à la loi sénégalaise n° 2008-12 sur la protection des données personnelles</p>
+        <p style="margin-top: 0.5rem; font-size: 0.75rem;">Dernière mise à jour : 15 janvier 2025</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top" id="backToTop">↑</a>
+
+  <script>
+  
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+   
+    const backToTop = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+
+    backToTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    const langButtons = document.querySelectorAll('.lang-btn');
+    const langContents = document.querySelectorAll('.lang-content');
+    
+    langButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const lang = button.getAttribute('data-lang');
+        
+        
+        langButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        
+        
+        langContents.forEach(content => {
+          content.classList.remove('active');
+          if (content.getAttribute('data-lang') === lang) {
+            content.classList.add('active');
+          }
+        });
+      });
+    });
+
+   
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>
